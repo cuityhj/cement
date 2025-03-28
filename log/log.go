@@ -22,7 +22,7 @@ const (
 )
 
 func NewLog4jLogger(filename string, level LogLevel, maxSize, maxFileCount int) (Logger, error) {
-	return NewLog4jLoggerWithFmt(filename, level, maxSize, maxFileCount, l4g.NewDefaultFormater(l4g.FORMAT_SHORT))
+	return NewLog4jLoggerWithFmt(filename, level, maxSize, maxFileCount, l4g.NewDefaultFormater(l4g.FORMAT_LONG))
 }
 
 func NewLog4jLoggerWithFmt(filename string, level LogLevel, maxSize, maxFileCount int, formater l4g.LogFormater) (Logger, error) {
@@ -50,7 +50,7 @@ func NewLog4jLoggerWithFmt(filename string, level LogLevel, maxSize, maxFileCoun
 }
 
 func NewLog4jConsoleLogger(level LogLevel) Logger {
-	return NewLog4jConsoleLoggerWithFmt(level, l4g.NewDefaultFormater(l4g.FORMAT_SHORT))
+	return NewLog4jConsoleLoggerWithFmt(level, l4g.NewDefaultFormater(l4g.FORMAT_LONG))
 }
 
 func NewLog4jConsoleLoggerWithFmt(level LogLevel, formater l4g.LogFormater) Logger {
@@ -69,7 +69,7 @@ func NewLog4jConsoleLoggerWithFmt(level LogLevel, formater l4g.LogFormater) Logg
 }
 
 func NewLog4jBufLogger(logChLength uint, level LogLevel) (Logger, <-chan string) {
-	return NewLog4jBufLoggerWithFmt(logChLength, level, l4g.NewDefaultFormater(l4g.FORMAT_SHORT))
+	return NewLog4jBufLoggerWithFmt(logChLength, level, l4g.NewDefaultFormater(l4g.FORMAT_LONG))
 }
 
 func NewISO3339Log4jBufLogger(logChLength uint, level LogLevel) (Logger, <-chan string) {

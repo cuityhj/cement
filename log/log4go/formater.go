@@ -9,6 +9,7 @@ import (
 const (
 	FORMAT_DEFAULT = "[%D %T] [%L] (%S) %M"
 	FORMAT_SHORT   = "[%t %d] [%L] %M"
+	FORMAT_LONG    = "[%D %T] [%L] %M"
 	FORMAT_ABBREV  = "[%L] %M"
 )
 
